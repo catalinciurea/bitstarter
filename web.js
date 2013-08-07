@@ -6,6 +6,8 @@ var app = express();
 app.use(express.logger());
 
 app.set('views', __dirname);
+app.use(express.static(__dirname + '/public'));
+
 app.engine('html', require('ejs').renderFile);
 
 app.get('/', function(request, response) {
